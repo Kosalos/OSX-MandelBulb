@@ -1,0 +1,125 @@
+MandelBulb
+A collection of fractals, inclusing the MandelBulb, Stacked Julia,
+Quaternion Julia, IFS equations, and Apollonian Gaskets.
+
+The panel on the left holds two kinds of controls:
+buttons, and one or two dimensional widgets.
+
+Widgets:
+Mouse click on a widget to select it.
+It's legend will turn Green.
+You can also move the focus up/down with the '<' and '>' keys.
+Press the assigned Hotkey character to move the focus directly.
+
+Now on the image:
+Mouse drag to control the widget's parameters.
+You can also use the Arrow keys.
+
+Buttons:
+A button command is performed by Mouse clicking on the legend.
+
+---------------------------------------------------------------
+
+Note: Press <1> to toggle display of the Control Panel.
+Note: Use can exit program by press the <esc> key.
+
+Image Rotation
+Hold down the <option> key while you use the mouse to set the rotation direction and speed.
+Click on the image to stop rotation.
+
+---------------------------------------------------------------
+
+E. Select Formula
+   Tap on name to launch the Formula popup.
+   The corresponding parameters widgets are displayed directly below.
+
+R,G,B.
+   Bounding box axis controls move the Bounding box in the respective direction.
+   Use the mouse or arrow keys to move the bounding box.
+   When you stop the image is re-calculated at this new position.
+
+S.
+   Control the size of the bounding box.
+   Use the mouse or arrow keys to change the size of the bounding box.
+   When you stop the image is re-calculated at this new zoom size.
+
+Show Axes.
+   Show/Hide the axes legends and bounding box.
+
+Histogram Graph.
+   Histogram View displays the relative number of points at each iteration level.
+   Use this graph to select which points are rendered.
+   You can scroll the active region bars by dragging the mouse across the graph,
+   or use the following widgets:
+
+N. Center
+   Position the center of the Histogram active region.
+
+Spread.
+   Control the width of the Histogram active region.
+
+#######
+   The number of points inside the active region.
+
+PtSz #
+   Select point size.
+
+C. ColorEdit
+   Launches the Color Edit panel. (not shown)
+   This panel holds a collection of color bars,each assigned to a point Cloud value.
+
+Directions for use :
+   1. Tap on a bar to set its color from the palette index indicated by
+      which part of the bar you tap.
+   2. Tap bar a second time to set its color back to black.
+   3. Drag mouse across the panel to set multiple bar colors.
+   4. The "Center" and "Spread" widgets still work as before.
+      If you use them they erase any editing you have done.
+
+   Note: Drag on the Histogram graph to quickly move the colors.
+   Note: Image is invisible until you set a color bar.
+
+Palette.
+   Cycle through four color palettes.
+
+J. Smooth 1
+   Smooth does a convolution on the points to remove spikes in the point values.
+
+K. Smooth 2
+   Smooth 2 does the same except stronger.
+
+L. Quant 1
+   Quant 1 quantizes or posterizes the point cloud values by removing selected point values.
+
+M. Quant 2
+   Quant 2 does the same idea on different point regions.
+
+U. Undo
+   VERY Limited Undo. You can only undo the most recent 'Calc'.
+
+L. Save/Load
+   Launch the Save/Load dialog.
+
+8. Reset
+   Reset parameters back to MandelBulb formula #1.
+
+O. Stereo
+   Stereo toggles stereo viewing on and off.
+   The image is rendered twice, for 'cross-eyed' 3D viewing.
+   With the iPad held two feet away, slightly cross
+   your eyes so that there is a third image in the middle.
+   Relax your gaze, and concentrate only on that middle image, which is in 3D.
+
+Julia -----------
+The Julia formula works differently: it calculates a series of two dimensional Julia set images,
+then stacks them above each other within the bounding box.
+The Red and Green axes scroll as usual, but the blue axis holds the stacked 2D Julia set drawings.
+The Xaxis of the 4 widgets controls the parameters of the
+first Julia set, while the Yaxis controls the parameters of the last Julia set.
+All interior Jula sets linearly interpolate between these two.
+
+Apollonian ------------
+Note: Apollonian Gaskets comprise large tangent spheres.
+Their color has been assigned to the first 'ColorEdit' slot.
+If the spheres are not visible, tap 'ColorEdit', and set the color of the first bar.
+Note: use the 'Scale' control to view the endlessly repeating pattern.
