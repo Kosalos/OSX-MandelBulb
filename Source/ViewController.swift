@@ -233,9 +233,9 @@ class ViewController: NSViewController, NSWindowDelegate, WGDelegate {
     
     func wgCommand(_ cmd: WgIdent) {
         func presentPopover(_ name:String) {
-            let mvc = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil)
-            let vc = mvc.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue:name)) as! NSViewController
-            self.presentViewController(vc, asPopoverRelativeTo: wg.bounds, of: wg, preferredEdge: .maxX, behavior: .transient)
+            let mvc = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
+            let vc = mvc.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(name)) as! NSViewController
+            self.present(vc, asPopoverRelativeTo: wg.bounds, of: wg, preferredEdge: .maxX, behavior: .transient)
         }
         
         switch(cmd) {

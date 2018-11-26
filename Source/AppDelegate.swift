@@ -7,7 +7,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         NSSetUncaughtExceptionHandler { exception in
             print(exception)
-            //print(exception.callStackSymbols)
+            print(exception.callStackSymbols)
             exit(0)
         }
     }

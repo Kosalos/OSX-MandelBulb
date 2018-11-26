@@ -11,7 +11,7 @@
 
 #define MAX_ITERATIONS 40
 #define VMAX int((255000000 / sizeof(TVertex)) - 10000)
-#define WIDTH 200
+#define WIDTH 160
 
 enum { BULB_1,BULB_2,BULB_3,BULB_4,BULB_5,JULIA,BOX,QJULIA,IFS,APOLLONIAN };
 
@@ -59,9 +59,7 @@ typedef struct {
 
 typedef struct {
     matrix_float4x4 projectionMatrix;
-    matrix_float4x4 modelViewMatrix;
     matrix_float4x4 mvp;
-    vector_float3 light;
     float pointSize;
 } Uniforms;
 

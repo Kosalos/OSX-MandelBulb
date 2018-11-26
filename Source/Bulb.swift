@@ -263,7 +263,7 @@ class Bulb {
 //        if true { // adjacent shader removes completely surrounded pixels
 //            let commandBuffer = commandQueue.makeCommandBuffer()!
 //            let commandEncoder = commandBuffer.makeComputeCommandEncoder()!
-//            
+//
 //            commandEncoder.setComputePipelineState(pipeLineAdjacent)
 //            commandEncoder.setBuffer(mBuffer, offset:0, index: 0)
 //            commandEncoder.dispatchThreadgroups(threadGroups, threadsPerThreadgroup: threadGroupCount)
