@@ -469,7 +469,8 @@ constant int3 offset[] = {   // diamond
     { 0,-1,0 },
     { 0,+1,0 },
     { 0,0,-1 },
-    { 0,0,+1 }};
+    { 0,0,+1 },
+    { 0,0,0  }};
 
 kernel void smoothingShader
 (
