@@ -462,29 +462,14 @@ kernel void adjacentShader
 //MARK: -
 // set cloud point value to average of neighboring points
 
-#define X 1
-#define Y WIDTH
-#define Z (WIDTH * WIDTH)
-
-#define CONVOLUTION_COUNT 27
-constant int offset[] = {     // 3x3x3
-    -X-Y-Z, -Y-Z, +X-Y-Z,
-    -X-Z, -Z, +X-Z,
-    -X+Y-Z, +Y-Z, +X+Y-Z,
-    
-    -X-Y, -Y, +X-Y,
-    -X, 0, +X,
-    -X+Y, +Y, +X+Y,
-    
-    -X-Y+Z, -Y+Z, +X-Y+Z,
-    -X+Z, +Z, +X+Z,
-    -X+Y+Z, +Y+Z, +X+Y+Z,
-};
-
-//#define CONVOLUTION_COUNT 7
-//constant int offset[] = {   // diamond
-//    -X,+X, -Y,+Y, -Z,+Z, 0
-//};
+#define CONVOLUTION_COUNT 7
+constant int3 offset[] = {   // diamond
+    { -1,0,0 },
+    { +1,0,0 },
+    { 0,-1,0 },
+    { 0,+1,0 },
+    { 0,0,-1 },
+    { 0,0,+1 }};
 
 kernel void smoothingShader
 (
@@ -507,11 +492,14 @@ kernel void smoothingShader
     else {
         int total = 0;
         int count = 0;
-        device unsigned char *ptr = &src.data[p.x][p.y][p.z];
         unsigned char ch;
         
         for(int i=0;i<CONVOLUTION_COUNT;++i) {
-            ch = *(ptr + offset[i]);
+            int ix = p.x + offset[i][0];
+            int iy = p.y + offset[i][1];
+            int iz = p.z + offset[i][2];
+
+            ch = src.data[ix][iy][iz];
             if(ch > 0 && ch < 255) { // only include rendered points
                 total += int(ch);
                 ++count;
